@@ -1,10 +1,12 @@
-mkdir ~/nextcloud && \
-wget -O /tmp/nextcloud.zip https://raw.githubusercontent.com/AngelGonePro/nextcloud-docker/refs/heads/main/nextcloud.zip && \
+https://raw.githubusercontent.com/AngelGonePro/jellyfin-docker/refs/heads/main/jellyfin.zip
+```
+mkdir ~/jellyfin && \
+wget -O /tmp/jellyfin.zip https://raw.githubusercontent.com/AngelGonePro/jellyfin-docker/refs/heads/main/jellyfin.zip && \
 python3 - << 'EOF'
 import zipfile, os
 
-zip_path = "/tmp/nextcloud.zip"
-extract_to = "nextcloud"
+zip_path = "/tmp/jellyfin.zip"
+extract_to = "jellyfin"
 
 with zipfile.ZipFile(zip_path) as z:
     for member in z.namelist():
@@ -16,4 +18,5 @@ with zipfile.ZipFile(zip_path) as z:
                 with open(target, "wb") as f:
                     f.write(z.read(member))
 EOF
-rm /tmp/nextcloud.zip
+rm /tmp/jellyfin.zip
+```
