@@ -20,3 +20,8 @@ with zipfile.ZipFile(zip_path) as z:
 EOF
 rm /tmp/jellyfin.zip
 ```
+```
+cd ~/jellyfin
+cp .env.example .env
+nano .env      # set NC_TRUSTED_PROXIES to your proxy VM's IP, set NC_PORT
+```
